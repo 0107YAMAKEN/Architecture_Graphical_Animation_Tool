@@ -1,0 +1,50 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+    <title>アニメーションツール（仮）</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    
+    function drawGraph(obj) {
+        var idx = obj.selectedIndex;
+        var value = obj.options[idx].value;
+        var plotdata = document.getElementById('plotimg');
+        $.get("/plot/" + value, function(data) {
+            plotdata.src = "data:image/png:base64," + data;
+        });
+    };
+    $(document).ready(function() {
+        //initialize components
+        var target = document.getElementById('selector');
+        drawGraph(target);
+    });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+          <a href="" class="navbar-brand">アニメーションツール（仮）</a>
+          <button class="btn btn-outline-light text-light my-2 my-sm-0" type="submit">ファイル選択</button>
+</nav>
+    </header>
+    <h1 class ="text-center" style = "margin:5rem;">3層ラーメン構造モデル</h1>
+    <div>
+        <p>
+        <img src = {{image}} height = 350 width = 350>
+        <img src="static/img/anim2d.gif" height = 350 width = 350>
+        <img src="static/img/anim3d.gif" height = 350 width = 350>
+        <img src="static/img/anim_Bar.gif" height = 350 width = 350>
+        </p>
+    
+    </div>
+    <br/>
+        
+</body>
+
+</html>
