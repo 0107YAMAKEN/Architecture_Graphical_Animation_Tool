@@ -1,10 +1,11 @@
 # 建物が揺れる様子をグラフィカルに表現するアニメーションツール
 
 ## 使用ライブラリ
-webフレームワーク：flask\
-アニメーション生成：matplotlib\
-数値計算：numpy\
-csv操作：pandas
+webフレームワーク：Flask\
+テンプレートエンジン：Jinja2\
+アニメーション生成：Matplotlib\
+数値計算：Numpy\
+csv操作：Pandas
 
 ## 3Dアニメーション
 <img src="https://user-images.githubusercontent.com/39854090/67361305-2cb45180-f5a3-11e9-8967-e430d416d52d.gif">\
